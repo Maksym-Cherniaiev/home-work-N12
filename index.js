@@ -1,10 +1,10 @@
 class Iterator {
   constructor() {
-    this.currentValue = 1;
+    this.currentValue = 0;
   }
 
   rewind() {
-    this.currentValue = 1;
+    this.currentValue = 0;
     const fibonacciNum = new Fibonacci(this.currentValue);
     return (`current index: ${fibonacciNum.index}, current number: ${fibonacciNum.number}`);
   }
@@ -34,13 +34,12 @@ class Iterator {
 
 const calc = new Iterator();
 
+console.log(calc.next());
+console.log(calc.next());
 console.log(calc.current());
 console.log(calc.prev());
 console.log(calc.next());
 console.log(calc.next());
-console.log(calc.next());
-console.log(calc.next());
-console.log(calc.next());
-console.log(calc.next());
 console.log(calc.key());
+console.log(calc.current());
 console.log(calc.rewind());
