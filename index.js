@@ -1,30 +1,34 @@
 class Iterator {
   constructor() {
-    this.currentValue = 0;
-    this.fibonacciNum = new Fibonacci(this.currentValue);
+    this.currentValue = 1;
   }
 
   rewind() {
-    this.currentValue = 0;
-    return (`current index: ${this.fibonacciNum.index}, current number: ${this.fibonacciNum.number}`);
+    this.currentValue = 1;
+    const fibonacciNum = new Fibonacci(this.currentValue);
+    return (`current index: ${fibonacciNum.index}, current number: ${fibonacciNum.number}`);
   }
   
   current() {
-    return (`current index: ${this.fibonacciNum.index}, current number: ${this.fibonacciNum.number}`);
+    const fibonacciNum = new Fibonacci(this.currentValue);
+    return (`current index: ${fibonacciNum.index}, current number: ${fibonacciNum.number}`);
   }
 
   next() {
-    this.currentValue = this.currentValue + 1
-    return (`next index: ${this.fibonacciNum.index}, next number: ${this.fibonacciNum.number}`);
+    this.currentValue = this.currentValue + 1;
+    const fibonacciNum = new Fibonacci(this.currentValue);
+    return (`next index: ${fibonacciNum.index}, next number: ${fibonacciNum.number}`);
   }
 
   prev() {
-    this.currentValue = this.currentValue - 1
-    return (`previous index: ${this.fibonacciNum.index}, previous number: ${this.fibonacciNum.number}`);
+    this.currentValue = this.currentValue - 1;
+    const fibonacciNum = new Fibonacci(this.currentValue);
+    return (`previous index: ${fibonacciNum.index}, previous number: ${fibonacciNum.number}`);
   }
 
   key() {
-    return (`current index: ${this.fibonacciNum.index}`);
+    const fibonacciNum = new Fibonacci(this.currentValue);
+    return (`current index: ${fibonacciNum.index}`);
   }
 }
 
@@ -32,6 +36,11 @@ const calc = new Iterator();
 
 console.log(calc.current());
 console.log(calc.prev());
+console.log(calc.next());
+console.log(calc.next());
+console.log(calc.next());
+console.log(calc.next());
+console.log(calc.next());
 console.log(calc.next());
 console.log(calc.key());
 console.log(calc.rewind());
