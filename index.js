@@ -5,30 +5,25 @@ class Iterator {
 
   rewind() {
     this.currentValue = 0;
-    const fibonacciNum = new Fibonacci(this.currentValue);
-    return (`current index: ${fibonacciNum.index}, current number: ${fibonacciNum.number}`);
+    return (`current index: ${counter(this.currentValue).index}, current number: ${counter(this.currentValue).number}`);
   }
   
   current() {
-    const fibonacciNum = new Fibonacci(this.currentValue);
-    return (`current index: ${fibonacciNum.index}, current number: ${fibonacciNum.number}`);
+    return (`current index: ${counter(this.currentValue).index}, current number: ${counter(this.currentValue).number}`);
   }
 
   next() {
     this.currentValue = this.currentValue + 1;
-    const fibonacciNum = new Fibonacci(this.currentValue);
-    return (`next index: ${fibonacciNum.index}, next number: ${fibonacciNum.number}`);
+    return (`next index: ${counter(this.currentValue).index}, next number: ${counter(this.currentValue).number}`);
   }
 
   prev() {
     this.currentValue = this.currentValue - 1;
-    const fibonacciNum = new Fibonacci(this.currentValue);
-    return (`previous index: ${fibonacciNum.index}, previous number: ${fibonacciNum.number}`);
+    return (`previous index: ${counter(this.currentValue).index}, previous number: ${counter(this.currentValue).number}`);
   }
 
   key() {
-    const fibonacciNum = new Fibonacci(this.currentValue);
-    return (`current index: ${fibonacciNum.index}`);
+    return (`current index: ${counter(this.currentValue).index}`);
   }
 }
 
@@ -38,6 +33,9 @@ console.log(calc.next());
 console.log(calc.next());
 console.log(calc.current());
 console.log(calc.prev());
+console.log(calc.next());
+console.log(calc.next());
+console.log(calc.next());
 console.log(calc.next());
 console.log(calc.next());
 console.log(calc.key());
